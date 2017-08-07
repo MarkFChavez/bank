@@ -4,12 +4,12 @@ defmodule Bank.Withdraw do
 
   def do_withdraw(bank, amount) when amount < 0 do
     IO.puts("You cannot withdraw a negative amount.")
-    bank
+    exit(:normal)
   end
 
   def do_withdraw(bank = %{ account_balance: balance }, amount) when amount > balance do
     IO.puts("You cannot withdraw an amount greater than your balance.")
-    bank
+    exit(:normal)
   end
 
   def do_withdraw(bank, amount) do

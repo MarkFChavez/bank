@@ -4,7 +4,7 @@ defmodule Bank.Deposit do
 
   def do_deposit(bank, amount) when amount < 0 do
     IO.puts("You cannot deposit a negative amount.")
-    bank
+    exit(:normal)
   end
 
   def do_deposit(bank, amount) do
